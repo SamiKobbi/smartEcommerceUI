@@ -3,6 +3,10 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { ProductModule } from './product/product.module';
+import { CategoryModule } from './category/category.module';
+import { HttpClientModule } from '@angular/common/http';
+import { CategoryApiService } from './category/services/category-api.service';
 
 @NgModule({
   declarations: [
@@ -10,9 +14,12 @@ import { AppComponent } from './app.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ProductModule,
+    CategoryModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [CategoryApiService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
