@@ -7,10 +7,14 @@ import { ProductModule } from './product/product.module';
 import { CategoryModule } from './category/category.module';
 import { HttpClientModule } from '@angular/common/http';
 import { CategoryApiService } from './category/services/category-api.service';
+import { AuthService } from './services/auth.service';
+import { CallbackComponent } from './callback/callback.component';
+import { AuthGuard } from './services/auth.guard';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    CallbackComponent
   ],
   imports: [
     BrowserModule,
@@ -19,7 +23,7 @@ import { CategoryApiService } from './category/services/category-api.service';
     CategoryModule,
     HttpClientModule
   ],
-  providers: [CategoryApiService],
+  providers: [CategoryApiService,AuthService,AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

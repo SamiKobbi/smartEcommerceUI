@@ -15,12 +15,12 @@ export class CategoryListComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.categoryApiService.getCategory().subscribe(
-      categories => {
-        this.categories = categories;
-      },
-      error => this.errorMessage = <any>error
-    );
+    // this.categoryApiService.getCategory().subscribe(
+    //   categories => {
+    //     this.categories = categories;
+    //   },
+    //   error => this.errorMessage = <any>error
+    // );
   }
 
 }
